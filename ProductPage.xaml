@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WTW.Pages.ProductPage"
+             xmlns:models ="clr-namespace:WTW.Models"
+             Title="ProductPage">
+    
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to Product Page"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Frame HeightRequest="150"
+WidthRequest="150"
+CornerRadius="20"
+VerticalOptions="Center"
+HorizontalOptions="Center"
+Padding="0"
+IsClippedToBounds="True">
+
+            <Image x:Name="ProductImage"
+                   Source="{Binding ImageSource}"
+       Aspect="AspectFill"/>
+
+
+        </Frame>
+
+        <Label Text="Product Name:"
+            Margin="0,6"/>
+
+        <Picker
+    SelectedItem="{Binding Category}"
+    ItemsSource="{x:Static models:ProductModel.ProductCategory}">
+        </Picker>
+
+        <Button
+            Text="Save"
+            x:Name="SaveButton"
+            Clicked="SaveButton_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

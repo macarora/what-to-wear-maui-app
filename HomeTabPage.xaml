@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:pages="clr-namespace:WTW.Pages"
+            xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+            x:Class="WTW.Pages.HomeTabPage"
+            android:TabbedPage.ToolbarPlacement="Bottom">
+    
+        <pages:HomePage Title="Home" />
+        <pages:MyClothesTabPage Title="My Clothes" />
+        <pages:ScheduleTabPage Title="Schedule" />
+        <pages:WardrobeTabPage Title="Wardrobe" />
+        <pages:ProfilePage Title="Profile" />
+   
+</TabbedPage>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WTW.Pages.MyClothesTabPage">
+    
+    <ContentPage.Resources>
+        <Color x:Key="Primary">#03B3A2</Color>
+        <Color x:Key="PrimaryDark">#03B3A2</Color>
+       
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+                <Setter Property="TextColor" Value="White"/>
+            <Setter Property="WidthRequest" Value="100"/>
+            <Setter Property="HeightRequest" Value="100"/>
+            <Setter Property="CornerRadius" Value="50"/>
+                <Setter Property="Margin" Value="0,10"/>
+            </Style>
+        </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout x:Name="ListGrid" Padding="10">
+            <Label Text="Welcome to the My Clothes Page"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand" />
+   
+            <!--<Image
+         Source="camera"
+         Aspect="AspectFill"/>-->
+        
+        <Button Text="Tops" Style="{StaticResource ButtonStyle}"/>
+        <Button Text="Bottoms" Style="{StaticResource ButtonStyle}"/>
+        <Button Text="Outerwear" Style="{StaticResource ButtonStyle}"/>
+        <Button Text="Footwear" Style="{StaticResource ButtonStyle}"/>
+        <Button Text="Accessories" Style="{StaticResource ButtonStyle}"/>
+        <Button Text="Add Clothes" Clicked="AddClothes_Clicked" Style="{StaticResource ButtonStyle}"/>
+        <Button Text="Select Clothes" Clicked="SelectClothes_Clicked" Style="{StaticResource ButtonStyle}"/>
+
+
+    </VerticalStackLayout>
+
+    </ScrollView>
+
+
+</ContentPage>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WTW.Pages.ProfilePage"
+             xmlns:models ="clr-namespace:WTW.Models"
+             Title="ProfilePage">
+
+    <ScrollView>
+
+        <VerticalStackLayout Padding="20">
+            <!-- Code for Profile Picture  -->
+            <Frame
+                 HeightRequest="150"
+                 WidthRequest="150"
+                 CornerRadius="75"
+                 VerticalOptions="Center"
+                 HorizontalOptions="Center"
+                 Padding="0"
+                 IsClippedToBounds="True">
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ProfilePicture_Tapped" />
+                </Frame.GestureRecognizers>
+                <Image
+                     x:Name="ProfileImage"
+                     Source="ProfilePicture.png"
+                     Aspect="AspectFill" />
+            </Frame>
+            <!--Code for Profile Page name-->
+            <Label Text="My Profile"
+                   FontAttributes="Bold"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="StartAndExpand"
+                   Margin="0,12"/>
+             <!--Code for Name Entry-->
+            <Label Text="Name:"
+                   Margin="0,6"/>
+            <Entry Text="{Binding Name}"
+                   Placeholder="Name"
+                   Margin="0,6"/>
+            <!--Code for DOB Entry-->
+            <Label
+             Text="Date Of Birth:"
+             Margin="0,6"/>
+            <DatePicker Margin="0,6"/>
+            <!--Code for Clothing Prefrence Selection-->   
+            <Label
+                Text="My Clothing Prefrence:"
+                 Margin="0,6"/>
+
+            <Picker
+                
+                SelectedItem="{Binding ClothingPrefrence}"
+                ItemsSource="{x:Static models:ClothingPrefrence.Prefrences}">
+            </Picker>
+            <!--Code for Done Button to update the profile and feedback - Commented out for Sanity-->
+            <!--<Button
+                x:Name="ProfileUpdate"
+                Text="Done"
+                VerticalOptions="End"
+                HorizontalOptions="Center"
+                Margin="0,20,0,20"
+                Clicked="ProfileUpdate_Clicked"/>-->
+
+
+
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>
